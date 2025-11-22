@@ -1,0 +1,44 @@
+
+.list-footer>p:hover{
+    color: var(--text-primary);
+}
+.list-footer>button:hover{
+    color: var(--text-primary);
+}
+.filters button:hover{
+    color: var(--text-primary);
+}
+.add-todo label:hover{
+    border-color: var(--accent-blue);
+}
+.add-todo label:active{
+    background: var(--accent-gradient);
+}
+.add-todo label::after:active{
+    background-image: url(../assets/images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Newtask label:hover{
+    border-color: var(--accent-blue);
+}
+.Newtask input[type="checkbox"]:checked + label {
+    position: relative;
+    background: var(--accent-gradient);
+}
+.Newtask input[type="checkbox"]:checked + label::after{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.Newtask input[type="checkbox"]:checked + label + p {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+/* active buttons */
+.filters button.active{
+    color: var(--accent-blue);
+}

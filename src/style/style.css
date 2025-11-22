@@ -1,0 +1,187 @@
+:root{
+    /* === Default (Dark Mode) === */
+    /* Backgrounds */
+    --bg-body: hsl(235, 21%, 11%);
+    --bg-todo: hsl(235, 24%, 19%);
+    /* Text colors */
+    --text-primary: hsl(236, 33%, 92%);
+    --text-secondary: hsl(234, 39%, 85%);
+    --text-muted: hsl(233, 14%, 35%);
+    /* Borders & Lines */
+    --border-color: hsl(237, 14%, 26%);
+    /* Border shadow */
+    --border-shadow: hsl(235, 16%, 43%);
+    -Gray600: hsl(236, 9%, 61%);
+    /* Accent / Actions */
+    --accent-gradient: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --accent-blue: hsl(220, 98%, 61%);
+    /* Weights */
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+/* === Light Mode === */
+.lightMode{
+    /* Backgrounds */
+    --bg-body: hsl(0, 0%, 98%);
+    --bg-todo: hsl(234, 39%, 85%);
+    /* Text colors */
+    --text-primary: hsl(235, 19%, 35%);
+    --text-secondary: hsl(236, 9%, 61%);
+    --text-muted: hsl(233, 11%, 68%);
+}
+body{
+    background-color: var(--bg-body);
+    background-image: url(../assets/images/bg-mobile-dark.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    transition: background-color 0.5s ease;
+}
+.title{
+    color: #fff;
+    font-weight: var(--fw-bold);
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+}
+.image{
+    width: 1.7rem;
+    height: 1.7rem;
+}
+.image img{
+    width: inherit;
+    height: inherit;
+    display: block;
+    cursor: pointer;
+}
+.add-todo{
+    background-color: var(--bg-todo);
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+.add-todo input[type="text"]{
+    outline: none;
+    border: none;
+    background-color: inherit;
+    color: var(--text-primary);
+    transition: background-color 0.5s ease;
+}
+/* check lable style */
+.add-todo label{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #222;
+    padding: 2px;
+    margin: 6px;
+    cursor: pointer;
+    transition: border-color 0.4s linear, background-color 0.4s linear;
+}
+.add-todo label::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* ============ */
+.list{
+    border-radius: 5px;
+    background-color: var(--bg-todo);
+    box-shadow: 1px 1px 2px var(--border-shadow);
+    transition: background-color 0.5s ease;
+}
+.list-footer>p{
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: var(--fw-regular);
+    transition: color 0.5s linear;
+}
+.list-footer>button{
+    outline: none;
+    border: none;
+    background-color: inherit;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.5s linear;
+}
+.filters button{
+    outline: none;
+    border: none;
+    background-color: inherit;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.5s linear;
+}
+.drag-drop p{
+    color: var(--text-muted);
+    transition: color 0.5s linear;
+}
+.filters.mobile-only{
+    background-color: var(--bg-todo);
+    border-radius: 5px;
+    transition: background-color 0.5s ease;
+}
+
+.filters.desktop-only{
+    display: none;
+}
+/* Todo style */
+.item button{
+    outline: none;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+.Newtask p{
+    color: var(--text-primary);
+}
+.Newtask input[type="checkbox"]{
+    display: none;
+}
+.Newtask label{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.Newtask label::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+@media screen and (min-width:60em) {
+    .filters.desktop-only{
+        display: block;
+    }
+    .filters.desktop-only button{
+        font-size: 1rem;
+    }
+    .filters.mobile-only{
+        display: none;
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .image{
+        width: 2rem;
+        height: 2rem;
+    }
+    .add-todo input[type="text"]{
+        font-size: 1.2rem;
+    }
+    .list-footer>p,.list-footer>button{
+        font-size: 1rem;
+    }
+}
